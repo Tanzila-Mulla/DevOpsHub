@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOpsHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">DevOpsHub</div>
+
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Applications</a>
+            <a href="#">Interviews</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="welcome">
+            <h1>Welcome to DevOpsHub 👋</h1>
+            <p>Track your job applications and interviews in one place.</p>
+        </section>
+
+        <section class="stats">
+
+            <div class="card">
+                <h3>Total Applications</h3>
+                <h2 id="totalApplications">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Interviews</h3>
+                <h2 id="interviews">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Offers</h3>
+                <h2 id="offers">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Rejected</h3>
+                <h2 id="rejected">0</h2>
+            </div>
+
+        </section>
+
+        <section class="applications">
+
+            <div class="section-header">
+                <h2>Recent Applications</h2>
+                <input
+    type="text"
+    id="searchInput"
+    placeholder="Search applications..."
+>
+<div class="filters">
+    <button onclick="filterApplications('All')">All</button>
+    <button onclick="filterApplications('Applied')">Applied</button>
+    <button onclick="filterApplications('Interview')">Interview</button>
+    <button onclick="filterApplications('Offer')">Offer</button>
+    <button onclick="filterApplications('Rejected')">Rejected</button>
+</div>
+                <button id="addJobButton">+ Add Application</button>
+
+<div id="applicationForm" class="form-container">
+
+    <input type="text" id="companyInput" placeholder="Company Name">
+
+    <input type="text" id="roleInput" placeholder="Job Role">
+
+    <select id="statusInput">
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+    </select>
+
+    <input type="date" id="dateInput">
+
+    <button id="saveApplication">Save Application</button>
+
+</div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+<th>Role</th>
+<th>Status</th>
+<th>Date</th>
+<th>Action</th>
+                    </tr>
+                </thead>
+
+               <tbody id="jobList"></tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
